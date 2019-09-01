@@ -51,12 +51,12 @@ module.exports = {
 
   async update(req, res) {
     const { idFolder } = req.params;
-    const { user } = req.headers;
+    const { id } = req.headers;
 
     try {
       const folder = await Folder.findOne({ _id: idFolder });
 
-      const gitUser = await GitUser.findById(user)
+      const gitUser = await GitUser.findById(id)
 
       folder.gitusers.push(gitUser);
 
