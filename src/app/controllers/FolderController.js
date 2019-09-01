@@ -73,7 +73,7 @@ module.exports = {
     const { idFolder } = req.params;
 
     try {
-      await Folder.findOneAndDelete(idFolder);
+      await Folder.findOneAndDelete({ _id: idFolder });
 
       return res.send();
     }
