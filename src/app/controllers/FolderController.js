@@ -51,7 +51,7 @@ module.exports = {
 
   async update(req, res) {
     const { idFolder } = req.params;
-    const { id } = req.headers;
+    const { id } = req.body;
 
     try {
       const folder = await Folder.findOne({ _id: idFolder });
