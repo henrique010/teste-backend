@@ -4,7 +4,8 @@ module.exports = {
 
   async store(req, res) {
     const { idFolder } = req.params;
-    const { id, tag } = req.body;
+    const { tag } = req.body;
+    const { id } = req.headers;
 
     try {
       const folder = await Folder.findOne({ _id: idFolder }).populate('gitusers');
